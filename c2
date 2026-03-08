@@ -19,9 +19,9 @@ int main()
     perimeter = calculatePerimeter(diameter);
 
     printf("\n Circle Properties");
-    printf("\nDiameter:    %f", diameter);
-    printf("\nArea:        %f", area);
-    printf("\nPerimeter:   %f\n", perimeter);
+    printf("\nDiameter: %f", diameter);
+    printf("\nArea: %f", area);
+    printf("\nPerimeter: %f\n", perimeter);
     return 0;
 }
 
