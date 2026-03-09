@@ -27,31 +27,37 @@ int main() {
     return 0;
 }
 
-void fs(int mat[MAX][MAX], int r, int c) {
-    int i, j, k, min_row, col_ind, isSaddle, found = 0;
+void fs(int mat[MAX][MAX], int r, int c) 
+{
+    int i, j, k, min_row, col, is, found = 0;
 
     printf("\nChecking for Saddle Points...\n");
-    for (i = 0; i < r; i++) {
+    for (i = 0; i < r; i++) 
+    {
         min_row = mat[i][0];
-        col_ind = 0;
-        for (j = 1; j < c; j++) {
-            if (mat[i][j] < min_row) {
+        col= 0;
+        for (j = 1; j < c; j++) 
+       {
+            if (mat[i][j] < min_row)
+       {
                 min_row = mat[i][j];
-                col_ind = j;
+                col= j;
             }
         }
 
-        isSaddle = 1;
-        for (k = 0; k < r; k++) {
-            if (mat[k][col_ind] > min_row) {
-                isSaddle = 0;
+        is = 1;
+        for (k = 0; k < r; k++) 
+        {
+            if (mat[k][col] > min_row) 
+            {
+                is = 0;
                 break;
             }
         }
 
-        if (isSaddle) 
+        if (is) 
         {
-            printf("Saddle Point found: %d at [%d][%d]\n", min_row, i, col_ind);
+            printf("Saddle Point found: %d at [%d][%d]\n", min_row, i, col);
             found = 1;
         }
     }
