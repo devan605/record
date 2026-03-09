@@ -8,15 +8,18 @@
 void fs(int mat[MAX][MAX], int r, int c);
 void ft(int mat[MAX][MAX], int r, int c);
 
-int main() {
+int main()
+{
     int mat[MAX][MAX], r, c, i, j;
 
     printf("Enter number of rows and columns: ");
     scanf("%d %d", &r, &c);
 
     printf("Enter elements of the matrix:\n");
-    for (i = 0; i < r; i++) {
-        for (j = 0; j < c; j++) {
+    for (i = 0; i < r; i++)
+    {
+        for (j = 0; j < c; j++) 
+        {
             scanf("%d", &mat[i][j]);
         }
     }
@@ -39,7 +42,7 @@ void fs(int mat[MAX][MAX], int r, int c)
         for (j = 1; j < c; j++) 
        {
             if (mat[i][j] < min_row)
-       {
+            {
                 min_row = mat[i][j];
                 col= j;
             }
