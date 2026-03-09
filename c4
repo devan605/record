@@ -5,8 +5,8 @@
 #define MAX 50
 
 
-void findSaddlePoints(int mat[MAX][MAX], int r, int c);
-void findSecondLargest(int mat[MAX][MAX], int r, int c);
+void fs(int mat[MAX][MAX], int r, int c);
+void ft(int mat[MAX][MAX], int r, int c);
 
 int main() {
     int mat[MAX][MAX], r, c, i, j;
@@ -21,13 +21,13 @@ int main() {
         }
     }
 
-    findSaddlePoints(mat, r, c);
-    findSecondLargest(mat, r, c);
+    fs(mat, r, c);
+    ft(mat, r, c);
 
     return 0;
 }
 
-void findSaddlePoints(int mat[MAX][MAX], int r, int c) {
+void fs(int mat[MAX][MAX], int r, int c) {
     int i, j, k, min_row, col_ind, isSaddle, found = 0;
 
     printf("\nChecking for Saddle Points...\n");
@@ -62,7 +62,7 @@ void findSaddlePoints(int mat[MAX][MAX], int r, int c) {
     }
 }
 
-void findSecondLargest(int mat[MAX][MAX], int r, int c) 
+void ft(int mat[MAX][MAX], int r, int c) 
 {
     int temp, i, j, k = 0;
     int size = r * c;
