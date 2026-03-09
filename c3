@@ -2,7 +2,7 @@
 #include <math.h>
 
 #define ACCURACY 0.000001
-
+int fact(int n);
 float calculate_sin(float x)
 {
     float term = x; 
@@ -11,11 +11,24 @@ float calculate_sin(float x)
 
     while (fabsf(term / sum) > ACCURACY) 
     {
-        term = -term * x * x / ((2 * n) * (2 * n + 1));
+        term = pow(-1,n)*(pow(x,(2*n+1)))/fact(n);
         sum += term;
         n++;
     }
     return sum;
+}
+int fact(int n)
+{
+    int i;
+    if (n!=1)
+    {
+         for (i=1;i<n;i++)
+         {
+                n=n*(n-i);
+         }
+    }
+    
+    return n;
 }
 int main() 
 {
@@ -41,7 +54,7 @@ float calculate_cos(float x)
 
     while (fabsf(term / sum) > ACCURACY) 
     {
-        term = -term * x * x / ((2 * n - 1) * (2 * n));
+         term = pow(-1,n)*(pow(x,(2*n+1)))/fact(n);
         sum += term;
         n++;
     }
